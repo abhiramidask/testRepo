@@ -11,6 +11,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<flow name="testrepoFlow" doc:id="573f35f0-8cff-4f0b-8664-d557540706f8" >
 		<http:listener doc:name="Listener" doc:id="81909d5f-706e-478a-8595-7c0183e93f4b" config-ref="HTTP_Listener_config" path="/testRepo"/>
 		<set-payload value='#["Hi"]' doc:name="Set Payload" doc:id="964778ca-68c2-4301-8db0-2693863594be" />
-		<logger level="INFO" doc:name="Logger" doc:id="e7419263-f155-4714-8738-b50fbe2ec273" message='#[payload]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="e7419263-f155-4714-8738-b50fbe2ec273" message='payloadDemo'/>
 	</flow>
 </mule>
