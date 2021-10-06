@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="980efb9b-e8a5-44e9-b786-5804934f7aeb" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testrepoFlow" doc:id="573f35f0-8cff-4f0b-8664-d557540706f8" >
+		<http:listener doc:name="Listener" doc:id="81909d5f-706e-478a-8595-7c0183e93f4b" config-ref="HTTP_Listener_config" path="/testRepo"/>
+		<set-payload value='#["Hi"]' doc:name="Set Payload" doc:id="964778ca-68c2-4301-8db0-2693863594be" />
+	</flow>
+</mule>
